@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ApiMusicDaniiiii.Data;
 using ApiMusicDaniiiii.Models;
+using ApiMusicDaniiiii.DTO;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -39,7 +40,21 @@ public class SongsController : ControllerBase
     }
 
 
+    // POST api/<SongsController>
     [HttpPost]
+    public ActionResult Post([FromBody] SongDTO newSong)
+    {
+        var song = new Songs
+        {
+            Title = newSong.Title,
+            Language = newSong.Language,
+
+        };
+        dbContext.Songs.Add(song);
+        dbContext.SaveChanges();
+
+        return Ok();
+    }
 
 
     // PUT api/<SongsController>/5
