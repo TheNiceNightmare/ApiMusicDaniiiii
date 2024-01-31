@@ -47,7 +47,7 @@ public class SongsController : ControllerBase
         var song = new Songs
         {
             Title = newSong.Title,
-            Language = newSong.Language,
+            Language = newSong.language,
 
         };
         dbContext.Songs.Add(song);

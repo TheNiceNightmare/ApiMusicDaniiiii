@@ -13,12 +13,7 @@ builder.Services.AddDbContext<ApiDbContext>(options => options.UseSqlServer(@"Da
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
-{
-    ApiDbContext dbContext = scope.ServiceProvider.GetRequiredService<ApiDbContext>();
-    //use context
-    dbContext.Database.EnsureCreated();
-}
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

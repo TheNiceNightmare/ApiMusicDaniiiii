@@ -6,6 +6,8 @@
 
         public string Title { get; set; }
 
-        public string Languages { get; set; }
+        public string Language { get; set; }
+
+        public string Duration { get; set; }
     }
 }

@@ -4,6 +4,6 @@
     {
         public string Title { get; set; }
 
-        public string Languag { get; set; }
+        public string language { get; set; }
     }
 }
